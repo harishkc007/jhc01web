@@ -10,10 +10,9 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- task: Bash@3
+- task: AzurePowerShell@5
   inputs:
-    targetType: 'inline'
-    script: |
-      # Write your commands here
-      
-      echo 'Hello world'
+    azureSubscription: 'Harish-sub (71114d4d-f492-4644-a495-c88d5bcd6db4)'
+    ScriptType: 'InlineScript'
+    Inline: 'Get-AzResourceGroup'
+    azurePowerShellVersion: 'LatestVersion'
